@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/93df447214.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon0.png">
+    <title>Altar Blade</title>
+    <link href="lightbox.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,900;1,400;1,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* animations */
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: #232323;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header nav a:nth-child(1) {
+            padding: 0;
+
+        }
+
+        header nav a:nth-child(1) div {
+            background-image: url(logo0.png);
+            width: 200px;
+            height: 9vh;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 30px 15px;
+            transition: .3s;
+        }
+
+        header nav a:nth-child(1) div:hover {
+            transform: scale(1.05)
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10vh;
+            width: 50%;
+
+        }
+
+        header {
+            background-color: #551A8E;
+            color: #080808;
+            height: 10vh;
+            text-align: left;
+
+            position: relative;
+            width: 100vw;
+        }
+
+
+
+        header nav a {
+            padding: 15px 15px;
+            overflow: hidden;
+        }
+
+        span {
+            font-size: 35px;
+            color: #080808;
+            font-family: 'Londrina Solid', cursive;
+            transition: .2s;
+            text-decoration: none;
+        }
+
+        a:hover span {
+            color: white;
+        }
+
+        header aside {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 25%;
+            height: 10vh;
+            margin-right: 30px;
+        }
+
+        aside a {
+            padding: 30px 30px;
+            line-height: 10vh;
+            text-align: center;
+            display: flex !important;
+        }
+
+        aside a i {
+            font-size: 60px;
+            color: #080808;
+            transition: .3s;
+        }
+
+        aside a:hover i {
+            font-size: 65px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        .first iframe {
+            width: 75vw;
+            height: 70vh;
+            margin: 0 auto;
+        }
+
+        .filling {
+            width: 100vw;
+            height: 90vh;
+            background-image: url(bgc1.png);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .first {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            color: white;
+            background-image: url(background2.png);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .first h2 {
+            font-size: 80px;
+            font-family: 'Londrina Solid', cursive;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .first p {
+            font-size: 20px;
+            font-family: 'Londrina Solid', cursive;
+            padding: 0 10vw;
+        }
+
+        .second {
+            width: 100vw;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            color: white;
+            background-image: url(fixed.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .second h2 {
+            font-size: 55px;
+            font-family: 'Londrina Solid', cursive;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: white;
+            background-color: #000;
+
+        }
+
+        .second p {
+            font-size: 25px;
+            font-family: 'Londrina Solid', cursive;
+            padding: 0 20vw;
+        }
+
+        .third {
+            width: 100vw;
+            height: 130vh;
+            background-color: #bbb;
+            text-align: center;
+            background-image: url(bgc3.png);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .third h2 {
+            font-size: 90px;
+            padding-top: 75px;
+            font-family: 'Londrina Solid', cursive;
+            letter-spacing: 2px;
+        }
+
+        .third iframe {
+            width: 40vw;
+            height: 45vh;
+            flex-basis: 45%
+        }
+
+        .one {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .third iframe:nth-child(1),
+        .third iframe:nth-child(2) {
+            margin-bottom: 100px;
+        }
+
+        .gallery {
+            margin: 10px 50px;
+
+        }
+
+        .gallery img {
+            transition: .5s;
+            padding: 15px;
+            width: 430px;
+            height: 300px;
+        }
+
+        .gallery img:hover {
+            filter: grayscale(100%);
+            transform: scale(1.1);
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 90px;
+            padding: 15px 0px;
+            font-family: 'Londrina Solid', cursive;
+            letter-spacing: 2px;
+        }
+
+        .fourth {
+            width: 100vw;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            color: white;
+            background-image: url(box.jpg);
+            background-size: cover;
+            background-position: center center;
+            align-items: center;
+        }
+
+        .fourth h2 {
+            font-size: 65px;
+            font-family: 'Londrina Solid', cursive;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .fourth button {
+            width: 200px;
+            height: 50px;
+            font-size: 25px;
+            font-family: 'Londrina Solid', cursive;
+            transition: .3s;
+            margin: 15px 15px;
+            border: none;
+            background-color: lightcoral;
+        }
+
+        .fourth button:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .fourth button a {
+            padding: 15px 42px;
+        }
+
+        .fifth h1 {
+            padding-top: 100px;
+            font-size: 80px;
+            color: lightsalmon;
+            font-weight: bold;
+            font-family: 'Londrina Solid', cursive;
+        }
+
+        .fifth {
+            background-color: darkblue;
+            height: 200vh;
+            text-align: center;
+
+        }
+        .container {
+            font-family: 'poppins';
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* width: 1200px; */
+            transform-style: preserve-3d;
+            min-height: 60vh;
+        }
+        .container .box {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 40px;
+            background-color: #111;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+        }
+        .container .box::before {
+            content: 'C++';
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            font-size: 6em;
+            font-weight: 900;
+            color: #fff;
+            font-style: italic;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .container .box::after {
+            content: 'DEVELOPER';
+            position: absolute;
+            bottom: 50px;
+            right: 20px;
+            font-size: 2em;
+            font-weight: 900;
+            color: #fff;
+            font-style: italic;
+            opacity: 0;
+            transition: 0.5s;
+        }
+         .container .box:hover::before,
+         .container .box:hover::after {
+            opacity: 0.04;
+         }
+         .container .box .name {
+             position: absolute;
+             top: 0;
+             left: 0;
+             text-align: center;
+             color: #fff;
+             width: 100%;
+             transform-style: preserve-3d;
+             transform: translate3d(0,0,75px);
+            transition: 0.5s;
+            opacity: 0;
+            z-index: 10;
+         }
+         .container .box:hover .name {
+             top: 40px;
+             opacity: 1;
+         }
+         .container .box .buy {
+             position: absolute;
+             bottom: 0;
+             left: 50%;
+             transform-style: preserve-3d;
+             transform: translate3d(-50%,0,75px);
+             color: #fff;
+             background: #333;
+             padding: 10px 25px;
+             border-radius: 30px;
+             text-decoration: none;
+             transition: 0.5s;
+             opacity: 0;
+             z-index: 10;
+         }
+         .container .box:hover .buy {
+             bottom: 30px;
+             opacity: 1;
+         }
+         .container .box .circle {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             width: 200px;
+             height: 200px;
+             border-radius: 50%;
+             transition: 0.5s;
+             background: #fff;
+             transform-style: preserve-3d;
+             z-index: 10;
+             opacity: 1;
+             transform: translate3d(-50%,-50%, 25px);
+         }
+         .container .box .product {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             max-width: 180px;
+             height: 180px;
+             transition: 0.5s;
+             z-index: 999 !important;
+             transition: 0.5s;
+             transform-style: preserve-3d;
+             transform: translate3d(-50%,-50%,30px);
+             border-radius: 50%;
+            
+         }
+         .container .box:nth-child(1) .circle,
+         .container .box:nth-child(1) .buy {
+             background:chartreuse ;
+         }
+         .container .box:nth-child(2) .circle,
+         .container .box:nth-child(2) .buy {
+             background:lightblue ;
+         }
+         .container .box:nth-child(3) .circle,
+         .container .box:nth-child(3) .buy {
+             background:purple ;
+         }
+         /* .container .box .buy {
+             background-color: sandybrown !important;
+         } */
+        
+
+        @media (max-width: 1420px) {
+            aside a i {
+                font-size: 45px;
+                color: #080808;
+                transition: .3s;
+            }
+
+            aside a:hover i {
+                font-size: 50px;
+                color: white;
+                cursor: pointer;
+            }
+
+            header aside {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 25%;
+                height: 10vh;
+                margin-right: 50px;
+            }
+
+
+        }
+
+        @media (max-width: 1024px) {
+            .menu-btn {
+                display: flex;
+
+            }
+
+            header nav a {
+                padding: 25px 15px;
+            }
+
+            /* header nav a {
+                display: none;
+            } */
+            span {
+                background-color: #551A8E;
+                padding: 5px 10px;
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+
+            header aside {
+                width: 50%;
+                margin-right: 30px;
+            }
+
+            aside a {
+                padding: 15px 15px;
+                line-height: 10vh;
+                text-align: center;
+                display: flex !important;
+            }
+
+            aside a i {
+                font-size: 35px;
+                color: #080808;
+                transition: .3s;
+            }
+
+            aside a:hover i {
+                font-size: 40px;
+                color: white;
+                cursor: pointer;
+            }
+
+            .nav-links {
+                position: absolute;
+                left: 0px;
+                height: 90vh;
+                top: 10vh;
+                background-color: rgb(29, 29, 29);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in;
+            }
+
+            .first h2 {
+                font-size: 45px;
+                font-family: 'Londrina Solid', cursive;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+            }
+
+            .first p {
+                font-size: 16px;
+                letter-spacing: 1px;
+                font-family: 'Londrina Solid', cursive;
+                padding: 0 5vw;
+            }
+
+            .first iframe {
+                width: 90vw;
+                height: 35vh;
+                margin: 0 auto;
+            }
+
+            .second h2 {
+                font-size: 35px;
+                font-family: 'Londrina Solid', cursive;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: white;
+                background-color: #000;
+
+            }
+
+            .second p {
+                font-size: 18px;
+                letter-spacing: 1px;
+                font-family: 'Londrina Solid', cursive;
+                padding: 0 5vw;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            .third {
+                height: 230vh;
+                flex-direction: column;
+            }
+
+            .third h2 {
+                font-size: 50px;
+                padding-top: 25px;
+            }
+
+            .third iframe:nth-child(1),
+            .third iframe:nth-child(2),
+            .third iframe:nth-child(3),
+            .third iframe:nth-child(4) {
+                margin-bottom: 25px;
+                flex-basis: 50vh;
+                width: 80%;
+            }
+
+            .gallery img {
+                transition: .5s;
+                padding: 15px;
+                width: 380px;
+                height: 230px;
+            }
+
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            header a:nth-child(1) {
+                display: none;
+
+            }
+
+            .fourth h2 {
+                font-size: 35px;
+                font-family: 'Londrina Solid', cursive;
+                letter-spacing: 2px;
+                color: white;
+            }
+
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+
+        .nav-active {
+            transform: translateX(0%);
+        }
+        .teamtext {
+            font-weight: 900;
+            font-size: 65px;
+            font-family: 'poppins';
+            text-align: center;
+            background-color: #ddd;
+        }
+    </style>
+    <script id="convertful-api" src="https://app.convertful.com/Convertful.js?owner=17518" async></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+        </div>
+        <nav class="nav-links">
+            <a href="">
+                <div></div>
+            </a>
+            <a href=""><span>Home</span></a>
+            <a href=""><span>Devlogs</span></a>
+            <a class="team"><span>Team</span></a>
+            <a href="http://eepurl.com/hcguhH"><span>Subscribe</span></a>
+        </nav>
+        <aside><a href=""><i class="fab fa-discord"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a></aside>
+    </header>
+    <div class="filling"></div>
+    <section class="first">
+        <h2>What is Altar Blade?</h2>
+        <iframe width="2071" height="951" src="https://www.youtube.com/embed/HHBsvKnCkwI" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, voluptas atque doloremque harum delectus
+            velit laborum repellendus repudiandae sint, itaque cumque saepe deserunt culpa vero expedita, quidem
+            laudantium asperiores animi dolore error.</p>
+    </section>
+    <section class="second">
+        <h2>The world is awaiting for you</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi saepe beatae optio laborum expedita
+            impedit earum possimus ducimus qui illum? Possimus deleniti necessitatibus consequuntur facere.
+        </p>
+    </section>
+    <section class="third">
+        <h2>Checkout gameplay videos</h2>
+        <div class="one">
+            <iframe width="2071" height="951" src="https://www.youtube.com/embed/I5AtplMTZBk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe width="2071" height="951" src="https://www.youtube.com/embed/I5AtplMTZBk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe width="2071" height="951" src="https://www.youtube.com/embed/I5AtplMTZBk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <iframe width="2071" height="951" src="https://www.youtube.com/embed/I5AtplMTZBk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+    <div class="gallery">
+        <h2>Gallery</h2>
+        <a href="images/sunforest.jpg" data-lightbox="mygallery" data-title="Sunforest"><img
+                src="images/sunforest-small.jpg" alt=""></a>
+        <a href="images/mountains.jpg" data-lightbox="mygallery" data-title="Mountains"><img
+                src="images/mountains-small.jpg" alt=""></a>
+        <a href="images/road.jpg" data-lightbox="mygallery" data-title="Road"><img src="images/road-small.jpg"
+                alt=""></a>
+        <a href="images/moon.jpg" data-lightbox="mygallery" data-title="Moon"><img src="images/moon-small.jpg"
+                alt=""></a>
+        <a href="images/sunforest.jpg" data-lightbox="mygallery" data-title="Sunforest"><img
+                src="images/sunforest-small.jpg" alt=""></a>
+        <a href="images/mountains.jpg" data-lightbox="mygallery" data-title="Mountains"><img
+                src="images/mountains-small.jpg" alt=""></a>
+        <a href="images/road.jpg" data-lightbox="mygallery" data-title="Road"><img src="images/road-small.jpg"
+                alt=""></a>
+        <a href="images/moon.jpg" data-lightbox="mygallery" data-title="Moon"><img src="images/moon-small.jpg"
+                alt=""></a>
+        <a href="images/sunforest.jpg" data-lightbox="mygallery" data-title="Sunforest"><img
+                src="images/sunforest-small.jpg" alt=""></a>
+        <a href="images/mountains.jpg" data-lightbox="mygallery" data-title="Mountains"><img
+                src="images/mountains-small.jpg" alt=""></a>
+        <a href="images/road.jpg" data-lightbox="mygallery" data-title="Road"><img src="images/road-small.jpg"
+                alt=""></a>
+        <a href="images/moon.jpg" data-lightbox="mygallery" data-title="Moon"><img src="images/moon-small.jpg"
+                alt=""></a>
+    </div>
+    <section class="fourth">
+        <h2>Subscribe to our newsletter to stay tuned!</h2>
+        <button><a href="http://eepurl.com/hcguhH">Subscribe</a></button>
+    </section>
+    <h2 class="teamtext">Team</h2>
+    <div class="container">
+        <div class="box">
+            <h2 class="name">Tony Smith</h2>
+            <a href="#" class="buy">Contact</a>
+            <div class="circle"></div>
+            <img class="product" src="guy1.png" alt="">
+        </div>
+        <div class="box">
+            <h2 class="name">Tony Smith</h2>
+            <a href="#" class="buy">Contact</a>
+            <div class="circle"></div>
+            <img class="product" src="guy1.png" alt="">
+        </div>
+        <div class="box">
+            <h2 class="name">Tony Smith</h2>
+            <a href="#" class="buy">Contact</a>
+            <div class="circle"></div>
+            <img class="product" src="guy1.png" alt="">
+        </div>
+    </div>
+        
+
+    <footer></footer>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $('.team').on('click', function () {
+            $('body, html').animate({
+                scrollTop: $('.container').offset().top
+            }, 650)
+        })
+    </script>
+    <script src="main.js">
+    </script>
+    <script src="app.js"></script>
+    <script src="lightbox.js"></script>
+    <script src="vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".box"), {
+		max: 25,
+		speed: 400
+	});
+    </script>
+</body>
+
+</html>
